@@ -6,5 +6,7 @@ def cross_join(employees, departments):
     :param departments: Список DepartmentName таблицы Department
     :return: Генератор пар (LastName, DepartmentName)
     """
-    # put your code here
+    for e in employees:
+        for d in departments:
+            yield e, d
     pass
