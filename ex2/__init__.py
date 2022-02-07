@@ -20,11 +20,11 @@ def benchmark(num):
                 endTime = time.time()
                 funcTime = endTime - startTime
                 number = i + 1
-                print("Прогон " + number + ": " + funcTime)
+                print("Прогон " + str(number) + ": " + str(funcTime))
                 commonTime = commonTime + funcTime
 
             result = commonTime / num
-            print("Среднее время: " + result)
+            print("Среднее время: " + str(result))
         return decoratedFunc
         pass
     return wrapper
