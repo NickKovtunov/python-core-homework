@@ -11,7 +11,21 @@ def benchmark(num):
     :return: функцию обёртку
     """
     def wrapper(func):
-        # put your code here
+        import time
+        def decoratedFunc(*args, **kwargs):
+            commonTime = 0
+            for i in range(num):
+                startTime = time.time()
+                func(*args, **kwargs)
+                endTime = time.time()
+                funcTime = endTime - startTime
+                number = i + 1
+                print("Прогон " + number + ": " + funcTime)
+                commonTime = commonTime + funcTime
+
+            result = commonTime / num
+            print("Среднее время: " + result)
+        return decoratedFunc
         pass
     return wrapper
 
