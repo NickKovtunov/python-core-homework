@@ -9,4 +9,3 @@ def cross_join(employees, departments):
     for e in employees:
         for d in departments:
             yield e, d
-    pass

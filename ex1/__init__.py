@@ -4,22 +4,19 @@ def build_roles_tree(mapping):
     :return: дерево ролей
     """
     categories = []
-    for cId in mapping["categoryIdsSorted"]:
+    for c_id in mapping["categoryIdsSorted"]:
         category = {
-            "id": "category-" + cId,
-            "text": mapping["categories"][cId]["name"],
+            "id": "category-" + c_id,
+            "text": mapping["categories"][c_id]["name"],
             "items": []
         }
-        
-        for rId in mapping["categories"][cId]["roleIds"]:
+        for r_id in mapping["categories"][c_id]["roleIds"]:
             item = {
-                "id": rId,
-                "text": mapping["roles"][rId]["name"]
+                "id": r_id,
+                "text": mapping["roles"][r_id]["name"]
             }
             category["items"].append(item)
-            
         categories.append(category)
 
     res = {"categories": categories}
     return res
-    pass
